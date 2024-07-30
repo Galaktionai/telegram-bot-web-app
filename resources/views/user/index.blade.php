@@ -34,24 +34,41 @@
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Наименование</th>
-                  <th>Email</th>
+                  <th>Имя пользователя</th>
                   <th>telegram_id</th>
-                  <th>Адрес</th>
-                  <th>Подъезд</th>
-                  <th>Квартира</th>
+                  <th>Имя</th>
+                  <th>Фамилия</th>
+                  <th>Номер телефона</th>
                 </tr>
               </thead>
               <tbody>
                 @foreach($users as $user)
                   <tr>
                     <td>{{ $user->id }}</td>
-                    <td><a href="{{ route('user.show', $user->id) }}">{{ $user->title }}</a></td>
-                    <td>{{ $user->email }}</td>
+                    <td><a href="{{ route('user.show', $user->id) }}">{{ $user->name }}</a></td>
                     <td>{{ $user->telegram_id }}</td>
-                    <td>{{ $user->address }}</td>
-                    <td>{{ $user->entrance }}</td>
-                    <td>{{ $user->apartment }}</td>
+                    <td>{{ $user->first_name }}</td>
+                    <td>{{ $user->last_name }}</td>
+                    <td>{{ $user->number_phone }}</td>
+                    <td class="project-actions text-right">
+                      <a class="btn btn-primary btn-sm" href="{{ route('user.show', $user->id) }}">
+                        <i class="fas fa-folder">
+                        </i>
+                        Открыть
+                      </a>
+                      <a class="btn btn-warning btn-sm" href="{{ route('user.edit', $user->id) }}">
+                        <i class="fas fa-pencil-alt">
+                        </i>
+                        Редактировать
+                      </a>
+                      <form action="{{ route('user.delete', $user->id) }}" method="post" class="btn btn-danger btn-sm">
+                        @csrf
+                        @method('delete')
+                        <i class="fas fa-trash">
+                        </i>
+                        <input style="background: 0; outline: 0; border: 0; margin: 0; color: white; padding: 0;" type="submit" value="Удалить">
+                      </form>
+                    </td>
                   </tr>
                 @endforeach
               </tbody>

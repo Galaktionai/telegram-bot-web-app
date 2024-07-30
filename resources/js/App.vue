@@ -1,4 +1,8 @@
 <template>
+  <!-- <RouterLink style="margin-right: 24px" to="/get">get</RouterLink>
+  <RouterLink style="margin-right: 24px" class="" to="/user/login">login</RouterLink>
+  <RouterLink style="margin-right: 24px" class="" to="/user/registration">registration</RouterLink>
+  <a @click.prevent="logout" href="#">Logout</a> -->
   <RouterView :products="products" :cart="cart" @add-to-cart="handleAddToCart"/>
 </template>
 
@@ -13,6 +17,13 @@ const cart = ref(JSON.parse(localStorage.getItem('cart')) || []);
 function handleAddToCart(product) {
   cart.value.push(product);
   localStorage.setItem('cart', JSON.stringify(cart.value));
+}
+
+function logout() {
+  axios.post('/logout')
+  .then( res => {
+    this.$router.push({name: 'user.login'})
+  })
 }
 
 onMounted(async () => {

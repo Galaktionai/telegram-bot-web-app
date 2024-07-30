@@ -34,7 +34,7 @@
         </div>
       </div>
     </div>
-    <div class="products">
+    <div v-auto-animate class="products">
       <div v-for="product in filteredProducts" :key="product.id" class="product__item">
         <router-link :to="{ name: 'productDetail', params: { id: product.id } }">
           <img class="product__item__img" :src="product.image_url" alt="">
@@ -45,7 +45,7 @@
         <button @click="addToCart(product)">Add to Cart</button>
       </div>
     </div>
-    {{ category }}
+    
   </div>
 </template>
 

@@ -24,12 +24,10 @@ return new class extends Migration
             $table->string('carbohydrates')->nullable();
 
             $table->string('preview_image')->nullable();
-            $table->string('detail_images')->nullable();
 
             $table->string('size')->nullable();
 
             $table->integer('price')->nullable();
-            $table->integer('count')->nullable();
             $table->boolean('is_published')->nullable();
 
             $table->foreignId('category_id')->nullable()->index()->constrained('categories');

@@ -1,0 +1,6 @@
+.product_image_admin_order{
+  width: 84px;
+  height: 84px;
+  object-fit: contain;
+  border-radius: 10px;
+}

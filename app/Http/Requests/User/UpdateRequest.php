@@ -29,6 +29,7 @@ class UpdateRequest extends FormRequest
             'address' => 'nullable|string',
             'entrance' => 'nullable|string',
             'apartment' => 'nullable|string',
+            'role' => 'nullable|string',
         ];
     }
 }

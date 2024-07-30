@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->string('entrance')->nullable();
             $table->string('apartment')->nullable();
+            $table->string('phone_number')->nullable();
         });
     }
 
@@ -29,9 +30,13 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('telegram_id');
+            $table->dropColumn('first_name');
+            $table->dropColumn('last_name');
+            $table->dropColumn('photo_url');
             $table->dropColumn('address');
             $table->dropColumn('entrance');
             $table->dropColumn('apartment');
+            $table->dropColumn('phone_number');
         });
     }
 };

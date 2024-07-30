@@ -18,7 +18,7 @@
                             <label for="telegram_id" class="col-md-4 col-form-label text-md-end">{{ __('Telegram_id Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="telegram-id-login" type="telegram_id" class="form-control @error('telegram_id') is-invalid @enderror" name="telegram_id" value="{{ old('telegram_id') }}" required autocomplete="telegram_id" autofocus>
+                                <input id="telegram-id-login" type="text" class="form-control @error('telegram_id') is-invalid @enderror" name="telegram_id" value="{{ old('telegram_id') }}" required autocomplete="telegram_id" autofocus>
 
                                 @error('telegram_id')
                                     <span class="invalid-feedback" role="alert">
@@ -174,6 +174,8 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
                             </div>
                         </div>
+
+                        <input type="text" class="form-control" name="role" value="0">
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">

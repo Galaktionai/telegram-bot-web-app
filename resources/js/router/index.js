@@ -26,20 +26,40 @@ const router = createRouter({
       component: () => import('../views/Cart.vue')
     },
     {
-      path: '/profile',
+      path: '/other',
+      name: 'Other',
+      component: () => import('../views/Other.vue')
+    },
+    {
+      path: '/other/profile',
       name: 'Profile',
       component: () => import('../views/Profile.vue')
     },
     {
-      path: '/profile/orders',
+      path: '/other/orders',
       name: 'Orders',
       component: () => import('../views/Orders.vue')
     },
     {
-      path: '/profile/orders/:id',
+      path: '/other/orders/:id',
       name: 'OrderDetail',
       component: () => import('../views/OrderDetail.vue'),
       props: true
+    },
+    {
+      path: '/get/',
+      name: 'get',
+      component: () => import('../components/Get.vue')
+    },
+    {
+      path: '/user/login/',
+      name: 'user.login',
+      component: () => import('../views/Login.vue')
+    },
+    {
+      path: '/user/registration',
+      name: 'user.registration',
+      component: () => import('../views/Registration.vue')
     },
   ]
 })

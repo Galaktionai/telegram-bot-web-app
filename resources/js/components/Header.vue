@@ -22,7 +22,7 @@
                 </RouterLink>
               </li>
               <li>
-                <RouterLink class="header__wrap__a" to="/">
+                <RouterLink class="header__wrap__a" to="/cart">
                   <svg class="header__wrap__a__svg_stroke" width="24" height="24">
                     <use href="/assets/img/sprite.svg#basket"></use>
                   </svg>
@@ -30,7 +30,7 @@
                 </RouterLink>
               </li>
               <li>
-                <RouterLink class="header__wrap__a" to="/profile">
+                <RouterLink class="header__wrap__a" to="/other">
                   <svg class="header__wrap__a__svg_stroke" width="24" height="24">
                     <use href="/assets/img/sprite.svg#profile-icon"></use>
                   </svg>

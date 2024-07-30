@@ -43,6 +43,20 @@
                   <tr>
                     <td>{{ $category->id }}</td>
                     <td><a href="{{ route('category.show', $category->id) }}">{{ $category->title }}</a></td>
+                    <td class="project-actions text-right">
+                      <a class="btn btn-warning btn-sm" href="{{ route('category.edit', $category->id) }}">
+                        <i class="fas fa-pencil-alt">
+                        </i>
+                        Редактировать
+                      </a>
+                      <form action="{{ route('category.delete', $category->id) }}" method="post" class="btn btn-danger btn-sm">
+                        @csrf
+                        @method('delete')
+                        <i class="fas fa-trash">
+                        </i>
+                        <input style="background: 0; outline: 0; border: 0; margin: 0; color: white; padding: 0;" type="submit" value="Удалить">
+                      </form>
+                    </td>
                   </tr>
                 @endforeach
               </tbody>

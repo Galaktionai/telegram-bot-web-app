@@ -17,21 +17,29 @@
     </div>
     <!-- /.content-header -->
 
-    <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-        <div class="row">
-          <form action="{{ route('category.update', $category->id) }}" method="post">
-            @csrf
-            @method('patch')
-            <div class="form-group">
-              <input type="text" name="title" value="{{ $category->title }}" class="form-control" placeholder="Наименование">
+        <div class="d-flex justify-content-center">
+
+          <div class="card card-warning" style="padding: 0; max-width: 680px; width: 100%">
+            <div class="card-header" style="">
+              <h3 class="card-title">Редактирование</h3>
             </div>
-            <div class="form-group">
-              <input type="submit" class="btn-primary btn" value="Редактировать">
-            </div>
-          </form>
+            <form action="{{ route('category.update', $category->id) }}" method="post">
+              @csrf
+              @method('patch')
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="">Наименование</label>
+                  <input type="text" name="title" value="{{ $category->title }}" class="form-control" id="" placeholder="Наименование">
+                </div>
+              </div>
+              <div class="card-footer">
+                <button type="submit" class="btn btn-warning">Добавить</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>

@@ -24,7 +24,6 @@ class ProductResource extends JsonResource
             'image_url' => $this->ImageUrl,
             'product_images' => ProductImageResource::collection($this->productImages),
             'price' => $this->price,
-            'count' => $this->count,
             'is_published' => $this->is_published,
             'category' => new CategoryResource($this->category),
             'weight' => $this->weight,
@@ -32,7 +31,6 @@ class ProductResource extends JsonResource
             'squirrels' => $this->squirrels,
             'fats' => $this->fats,
             'carbohydrates' => $this->carbohydrates,
-            'preview_image' => $this->preview_image,
             'size' => $this->size,
         ];
     }

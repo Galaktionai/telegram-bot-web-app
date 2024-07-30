@@ -36,7 +36,6 @@ class UpdateRequest extends FormRequest
             'carbohydrates' => 'nullable',
 
             'price' => 'nullable',
-            'count' => 'nullable',
             'size' => 'nullable',
 
             'is_published' => 'nullable',
