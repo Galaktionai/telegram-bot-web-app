@@ -22,6 +22,7 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'user_id' => 'nullable|string',
             'full_name' => 'nullable|string',
             'address' => 'nullable|string',
             'entrance' => 'nullable|string',
@@ -32,6 +33,8 @@ class UpdateRequest extends FormRequest
             'quantity_products' => 'nullable|string',
             'discount' => 'nullable|string',
             'all_price' => 'nullable|string',
+            'type' => 'nullable|string',
+            'status' => 'nullable|string',
         ];
     }
 }

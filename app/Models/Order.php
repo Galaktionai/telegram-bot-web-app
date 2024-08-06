@@ -11,8 +11,13 @@ class Order extends Model
     protected $table = 'orders';
     protected $guarded = false;
 
-    public function orderProduct()
+    // public function orderProduct()
+    // {
+    //     return $this->belongsTo(OrderProduct::class, 'order_products', 'id');
+    // }
+
+    public function orderProducts()
     {
-        return $this->belongsTo(OrderProduct::class, 'category_id', 'id');
+        return $this->hasMany(OrderProduct::class, 'order_id', 'id');
     }
 }

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            //$table->foreignId('user_id')->index()->constrained('users');
+            $table->string('user_id');
             $table->string('full_name')->nullable();
             $table->string('address')->nullable();
             $table->string('entrance')->nullable();
@@ -22,6 +22,7 @@ return new class extends Migration
 
             $table->string('info')->nullable();
 
+            $table->string('type')->nullable();
             $table->string('delivery_price')->nullable();
             $table->string('quantity_products')->nullable();
             $table->string('discount')->nullable();

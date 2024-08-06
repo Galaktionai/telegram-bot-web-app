@@ -49,6 +49,7 @@
                 <strong>Заказ</strong>
                 <address>
                   Номер заказа: {{ $order->id }}<br>
+                  Статус: {{ $order->status }}<br>
                   Адрес: {{ $order->address }}<br>
                   Подъезд: {{ $order->entrance }}<br>
                   Квартира: {{ $order->apartment }}<br>
@@ -72,11 +73,11 @@
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach($products as $product)
+                    @foreach($order_products->reverse() as $product)
                       <tr>
                         <td>{{ $product->id }}</td>
                         <td>
-                          <img class="product_image_admin_order" src="{{ url('storage/' . $product->preview_image) }}" alt="">
+                          <img class="product_image_admin_order" src="{{ $product->preview_image }}" alt="">
                         </td>
                         <td>{{ $product->title }}</td>
                         <td>{{ $product->price }}</td>

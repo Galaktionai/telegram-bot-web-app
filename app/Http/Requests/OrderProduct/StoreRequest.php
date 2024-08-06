@@ -22,6 +22,19 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'title' => 'nullable|string',
+            'description' => 'nullable|string',
+            'info' => 'nullable|string',
+            'weight' => 'nullable|string',
+            'calories' => 'nullable|string',
+            'squirrels' => 'nullable|string',
+            'fats' => 'nullable|string',
+            'carbohydrates' => 'nullable|string',
+            'preview_image' => 'nullable|string',
+            'size' => 'nullable|string',
+            'price' => 'nullable|string',
+            'category' => 'nullable|string',
+            'count' => 'nullable|string',
             'product_id' => 'nullable|string',
             'order_id' => 'nullable|string',
         ];

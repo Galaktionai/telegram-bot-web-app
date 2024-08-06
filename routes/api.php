@@ -13,6 +13,10 @@ Route::get('/users/{user}', \App\Http\Controllers\API\User\ShowController::class
 Route::get('/products', \App\Http\Controllers\API\Product\IndexController::class);
 Route::get('/products/{product}', \App\Http\Controllers\API\Product\ShowController::class);
 
+Route::get('/orders', \App\Http\Controllers\API\Orders\IndexController::class);
+Route::get('/orders/{order}', \App\Http\Controllers\API\Orders\DetailController::class);
+Route::get('/orders/products', \App\Http\Controllers\API\Orders\DetailController::class);
+Route::get('/orders', \App\Http\Controllers\API\Orders\ShowController::class);
 
 // Route::group(['namespace' => 'Order', 'prefix' => 'order'], function() {
 //     Route::get('/', 'StoreController');

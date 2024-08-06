@@ -33,6 +33,8 @@ class StoreRequest extends FormRequest
             'all_price' => 'nullable|string',
             'quantity_products' => 'nullable|string',
             'discount' => 'nullable|string',
+            'type' => 'nullable|string',
+            'status' => 'nullable|string',
         ];
     }
 }

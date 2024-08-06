@@ -3,7 +3,7 @@
   <RouterLink style="margin-right: 24px" class="" to="/user/login">login</RouterLink>
   <RouterLink style="margin-right: 24px" class="" to="/user/registration">registration</RouterLink>
   <a @click.prevent="logout" href="#">Logout</a> -->
-  <RouterView :products="products" :cart="cart" @add-to-cart="handleAddToCart"/>
+  <RouterView :products="products"/>
 </template>
 
 <script setup>
@@ -12,12 +12,6 @@ import axios from 'axios';
 import { useRouter } from 'vue-router';
 
 const products = ref([]);
-const cart = ref(JSON.parse(localStorage.getItem('cart')) || []);
-
-function handleAddToCart(product) {
-  cart.value.push(product);
-  localStorage.setItem('cart', JSON.stringify(cart.value));
-}
 
 function logout() {
   axios.post('/logout')

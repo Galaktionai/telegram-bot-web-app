@@ -4,3 +4,8 @@
   object-fit: contain;
   border-radius: 10px;
 }
+
+.pagination_wrap{
+  display: block;
+  margin: 24px;
+}

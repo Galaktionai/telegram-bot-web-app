@@ -45,7 +45,16 @@
   </header>
 </template>
 
-<script>
+<script setup>
+// const cart = ref([]);
+
+// onMounted(() => {
+//   cart.value = JSON.parse(localStorage.getItem('cart')) || [];
+//   orders.value = JSON.parse(localStorage.getItem('orders')) || [];
+
+//   let tg = window.Telegram.WebApp;
+//   tg.expand();
+// });
 import { RouterLink } from 'vue-router'
 </script>
 

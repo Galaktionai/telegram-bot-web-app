@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 
 class DeleteController extends Controller
 {
-    public function __invoke(OrderProduct $orderProduct)
+    public function __invoke(OrderProduct $order_product)
     {
-        $orderProduct->delete();
+        $order_product->delete();
 
         return redirect()->route('order.index');
     }

@@ -14,6 +14,20 @@ return new class extends Migration
         Schema::create('order_products', function (Blueprint $table) {
             $table->id();
 
+            $table->string('title')->nullable();
+            $table->string('description')->nullable();
+            $table->string('info')->nullable();
+            $table->string('weight')->nullable();
+            $table->string('calories')->nullable();
+            $table->string('squirrels')->nullable();
+            $table->string('fats')->nullable();
+            $table->string('carbohydrates')->nullable();
+            $table->string('preview_image')->nullable();
+            $table->string('size')->nullable();
+            $table->string('price')->nullable();
+            $table->string('category')->nullable();
+            $table->string('count')->nullable();
+
             $table->string('product_id')->nullable();
             $table->string('order_id')->nullable();
             

@@ -61,6 +61,9 @@
                 @endforeach
               </tbody>
             </table>
+            <div class="pagination_wrap">
+              {!! $categories->links('pagination::bootstrap-5') !!}
+            </div>
           </div>
         </div>
       </div>

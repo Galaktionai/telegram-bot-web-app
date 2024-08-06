@@ -25,8 +25,13 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/{order}', \App\Http\Controllers\Order\ShowController::class)->name('order.show')->middleware(['auth', 'admin']);
         Route::patch('/{order}', \App\Http\Controllers\Order\UpdateController::class)->name('order.update')->middleware(['auth', 'admin']);
         Route::delete('/{order}', \App\Http\Controllers\Order\DeleteController::class)->name('order.delete')->middleware(['auth', 'admin']);
-        Route::delete('/{order}/edit', \App\Http\Controllers\OrderProduct\DeleteController::class)->name('order_product.delete')->middleware(['auth', 'admin']);
     });
+
+    Route::group(['prefix' => 'order_products'], function() {
+        Route::delete('/{order_product}', \App\Http\Controllers\orderProduct\DeleteController::class)->name('order_product.delete')->middleware(['auth', 'admin']);
+    });
+
+
 
     Route::group(['prefix' => 'categories'], function() {
         Route::get('/', \App\Http\Controllers\Category\IndexController::class)->name('category.index')->middleware(['auth', 'admin']);

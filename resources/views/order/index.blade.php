@@ -34,19 +34,21 @@
             <table class="table table-hover text-nowrap">
               <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Наименование</th>
+                  <th>Номер заказа</th>
                   <th>Адрес</th>
                   <th>Номер телефона</th>
                   <th>Итог. цена</th>
+                  <th>Статус</th>
               </thead>
               <tbody>
-                @foreach($orders as $order)
+                @foreach($orders->reverse() as $order)
+                {{$order}}
                   <tr>
                     <td>{{ $order->id }}</td>
-                    <td><a href="{{ route('order.show', $order->id) }}">{{ $order->name }}</a></td>
+                    <td>{{ $order->address }}</td>
                     <td>{{ $order->phone_number }}</td>
                     <td>{{ $order->all_price }}</td>
+                    <td>{{ $order->status }}</td>
                     <td class="project-actions text-right">
                       <a class="btn btn-primary btn-sm" href="{{ route('order.show', $order->id) }}">
                         <i class="fas fa-folder">
@@ -70,6 +72,9 @@
                 @endforeach
               </tbody>
             </table>
+            <div class="pagination_wrap">
+              {!! $orders->links('pagination::bootstrap-5') !!}
+            </div>
           </div>
         </div>
       </div>

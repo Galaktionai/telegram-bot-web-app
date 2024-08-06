@@ -1,6 +1,6 @@
 <template>
-  <Title title="Cheat meal"/>
-  <Catalog :products="products" @add-to-cart="handleAddToCart"/>
+  <Title title="GALA"/>
+  <Catalog :products="products"/>
   <Header/>
 </template>
 
@@ -11,9 +11,4 @@ import Title from '../components/Title.vue';
 import Catalog from '../components/Catalog/Catalog.vue';
 
 const props = defineProps(['products']);
-const cart = ref([]);
-
-function handleAddToCart(product) {
-  cart.value.push(product);
-}
 </script>

@@ -56,6 +56,11 @@
                   @csrf
                   @method('patch')
                   <address>
+                    <select class="form-control" name="status" id="">
+                      <option value="Принят">Принят</option>
+                      <option value="Завершен">Завершен</option>
+                      <option value="Отменен">Отменен</option>
+                    </select>
                     <input class="form-control" name="address" type="text" value="{{ $order->address }}" placeholder="Адрес"><br>
                     <input class="form-control" name="entrance" type="text" value="{{ $order->entrance }}" placeholder="Подъезд"><br>
                     <input class="form-control" name="apartment" type="text" value="{{ $order->apartment }}" placeholder="Квартира"><br>
@@ -81,21 +86,21 @@
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach($products as $product)
+                    @foreach($order_products->reverse() as $order_product)
                       <tr>
-                        <td>{{ $product->id }}</td>
+                        <td>{{ $order_product->id }}</td>
                         <td>
-                          <img class="product_image_admin_order" src="{{ url('storage/' . $product->preview_image) }}" alt="">
+                          <img class="product_image_admin_order" src="{{ $order_product->preview_image }}" alt="">
                         </td>
-                        <td>{{ $product->title }}</td>
-                        <td>{{ $product->price }}</td>
+                        <td>{{ $order_product->title }}</td>
+                        <td>{{ $order_product->price }}</td>
                         <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="{{ route('product.show', $product->id) }}">
+                          <a class="btn btn-primary btn-sm" href="{{ route('product.show', $order_product->id) }}">
                             <i class="fas fa-folder">
                             </i>
                             Открыть
                           </a>
-                          <form action="{{ route('order_product.delete', $product->id) }}" method="post" class="btn btn-danger btn-sm" style="margin-right: 5px;">
+                          <form action="{{ route('order_product.delete', $order_product->id) }}" method="post" class="btn btn-danger btn-sm" style="margin-right: 5px;">
                             @csrf
                             @method('delete')
                             <i class="fas fa-trash"></i>

@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $orders = Order::all();
+        $orders = Order::paginate(16);
         return view('order.index', compact('orders'));
     }
 }
